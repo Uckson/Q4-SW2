@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Seatwork 2</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+<style type="text/css">
+	body{
+		background-color: #85837E;
+		background-image: 
+		url(file:///C:/Users/kids/Desktop/SY%202023-2024/ICT%20QTR4/Seatwork%202/PIC.png);
+		background-repeat: no-repeat;
+		background-size: 1400px;
+	}
+
+
+	#buttons{
+		display: none;
+	}
+
+	.text{
+		width: 600px;
+		border: dashed;
+		border-width: 5px;
+		padding: 20px;
+		margin: 20px;
+		background-color: #F48020;
+	}
+
+	.btn-xl {
+    	padding: 10px 20px;
+    	font-size: 20px;
+    	border-radius: 10px;
+    	width:220%;
+	}
+	.operators{
+  		position: relative;
+  		display: inline-flex;
+	}
+
+	#buttons{
+  		position: absolute;
+  		top: 500px;
+  		right: 370px;
+	}
+
+	h1{
+		font-size: 50px;
+	}
+
+	p{
+		font-size: 25px;
+	}
+
+</style>
+</head>
+
+<body>
+		<div class="text" style= "position:relative; left:1050px;">
+			<h1>QUICK!</h1>
+			<p>
+			Help the car mechanics make complex calculations so their car can win the race! 
+			<br>(Click the black button to reveal different operators.)
+			<br>
+			<br>
+			Enter a value for x: <input type="number" id="num1">
+			<br>
+			<br>
+			Enter a value for y: <input type="number" id="num2">
+			<br>
+			</p>
+			
+			<button onclick="myFunction()" class="btn btn-dark btn-lg">CLICK ME!</button>
+		</div>
+
+			
+		<div class="operators" id="buttons">
+				<p id="sum"></p>
+				<button class="btn btn-danger btn-xl" type="Submit" onclick="plus()">Check if X and Y are Equal </button>
+
+				<p id="difference"></p>
+				<button class="btn btn-danger btn-xl" type="Submit" onclick="minus()">Subtract </button>
+
+				<p id="product"></p>
+				<button class="btn btn-danger btn-xl" type="Submit" onclick="product()">Multiply </button>
+			
+				<p id="quotient"></p>
+				<button class="btn btn-danger btn-xl" type="Submit" onclick="divide()">Divide </button>
+		</div>
+
+		<script type="text/javascript">
+			function myFunction() {
+  				var x = document.getElementById("buttons");
+  				if (x.style.display === "none") {
+    				x.style.display = "block";
+    				window.confirm("It's operators time!");
+  				} else {
+    				x.style.display = "none";
+  				}
+
+			}
+
+			function plus() {
+				let x = document.getElementById("num1").value;
+				let y = document.getElementById("num2").value;
+				
+				if (x==y) {
+					equal = "true";
+					window.alert("X and Y are equal.");
+				} else {
+					equal = "false";
+					window.alert("X and Y are not equal.");
+				}
+
+			}
+
+			function minus() {
+				var num1 = document.getElementById("num1").value;
+				var num2 = document.getElementById("num2").value;
+				var difference = Number(num1) - Number(num2);
+
+				window.alert("The difference is " + difference);
+			}
+
+			function product() {
+				var num1 = document.getElementById("num1").value;
+				var num2 = document.getElementById("num2").value;
+				var product = Number(num1) * Number(num2);
+
+				window.alert("The product is " + product);
+			}
+
+			function divide() {
+				var num1 = document.getElementById("num1").value;
+				var num2 = document.getElementById("num2").value;
+				var quotient = Number(num1) / Number(num2);
+
+				window.alert("The quotient is " + quotient);
+			}
+	</script>
+</body>
+</html>
